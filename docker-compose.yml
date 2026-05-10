@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: mlops_postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: mlflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - mlops_net
+
+  minio:
+    image: minio/minio:latest
+    container_name: mlops_minio
+    environment:
+      MINIO_ROOT_USER: root
+      MINIO_ROOT_PASSWORD: root123456789
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    command: server /data --console-address ":9001"
+    volumes:
+      - minio_data:/data
+    networks:
+      - mlops_net
+
+  mlflow:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.mlflow
+    container_name: mlops_mlflow
+    ports:
+      - "5000:5000"
+    environment:
+      AWS_ACCESS_KEY_ID: root
+      AWS_SECRET_ACCESS_KEY: root123456789
+      MLFLOW_S3_ENDPOINT_URL: http://minio:9000
+    depends_on:
+      - postgres
+      - minio
+    networks:
+      - mlops_net
+
+  jupyter:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.jupyter
+    container_name: mlops_jupyter
+    ports:
+      - "8888:8888"
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+      JUPYTER_TOKEN: "mlflow"
+      AWS_ACCESS_KEY_ID: root
+      AWS_SECRET_ACCESS_KEY: root123456789
+      MLFLOW_S3_ENDPOINT_URL: http://minio:9000
+    volumes:
+      - ./:/home/jovyan/work
+    networks:
+      - mlops_net
+
+networks:
+  mlops_net:
+
+volumes:
+  pg_data:
+  minio_data:

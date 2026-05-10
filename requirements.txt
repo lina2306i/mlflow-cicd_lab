@@ -1,0 +1,8 @@
+mlflow
+jupyterlab
+requests
+scikit-learn
+pandas
+numpy
+boto3
+psycopg2-binary

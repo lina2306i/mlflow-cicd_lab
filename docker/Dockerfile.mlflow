@@ -1,0 +1,7 @@
+FROM python:3.9-slim
+RUN apt-get update && apt-get install -y libpq-dev gcc
+RUN pip install mlflow boto3 psycopg2-binary
+CMD mlflow server \
+    --backend-store-uri postgresql://root:root@postgres:5432/mlflow \
+    --default-artifact-root s3://mlflow \
+    --host 0.0.0.0
