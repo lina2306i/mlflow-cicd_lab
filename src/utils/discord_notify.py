@@ -35,7 +35,7 @@ WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL", "https://discord.com/api/webhooks
     #emoji = {"info": "ℹ️", "success": "✅", "error": "❌"}
     
     payload = {
-        "username": "MLOps Watcher",
+        "username": "Bot-ML-Notifier",
         "avatar_url": "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
         "embeds": [{
             "title": f"{emoji.get(level, '➡️')} {task_name.upper()}",
@@ -95,7 +95,7 @@ def notify_discord(message, run_id="N/A", metrics=None, level="success", task_na
     emoji = {"info": "ℹ️", "success": "✅", "error": "❌", "warning": "⚠️"}
     
     payload = {
-        "username": "MLOps Watcher",
+        "username": "Bot-Notifier-MLOps",
         "avatar_url": "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
         "embeds": [{
             "title": f"{emoji.get(level, '➡️')} {task_name.upper()}",
