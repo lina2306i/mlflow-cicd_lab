@@ -9,76 +9,9 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("DiscordNotifier")
 
 # Il est préférable d'utiliser une variable d'environnement pour la sécurité
-#WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL", "https://discord.com/api/webhooks/1502639151034404999/wP9lUn1qgL7QCVeaLp-2OwgNYjc8oXddz7Z2b5z2IQaaOhZGm-zKPbN2qhhHGvuV74LG")
-
 WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL", "https://discord.com/api/webhooks/1503504120072372436/tLMPJ6Erqsmz0Ok4awauPjcOKfP_eYMM9vsYcASIdZdPC_lgoggatfYZDYqVqe-UEG0n")
 
-#def notify_discord(message, level="info"):
-#def notify_discord(message, level="info", task_name="Training"):
-"""def notify_discord(message, metrics=None, level="success",task_name="Training"):
-    " ""
-    Envoie une notification enrichie sur Discord.
-    level: 'info', 'success', 'error', 'warning'
-    "" "
-    colors = {
-        "info": 3447003,      # Bleu
-        "success": 3066993,   # Vert
-        "warning": 16776960,  # Jaune
-        "error": 15158332     # Rouge
-    }
-    # Transformation des métriques en texte lisible
-    metrics_text = "N/A"
-    if metrics:
-        metrics_text = "\n".join([f"**{k}:** `{v:.4f}`" for k, v in metrics.items()])
 
-    emoji = {"info": "ℹ️", "success": "✅", "error": "❌", "warning": "⚠️"}
-    #emoji = {"info": "ℹ️", "success": "✅", "error": "❌"}
-    
-    payload = {
-        "username": "Bot-ML-Notifier",
-        "avatar_url": "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
-        "embeds": [{
-            "title": f"{emoji.get(level, '➡️')} {task_name.upper()}",
-            "description": message,
-            "color": colors.get(level, 3447003),
-            "fields": [
-                {
-                    "name": "Environnement-Model",
-                    "value": "`Production/Lab`",
-                    "inline": True
-                },
-                {
-                    "name": "Auteur",
-                    "value": "`ING.LABIADH LINA`",
-                    "inline": True
-                },
-                {
-                    "name": "Horodatage",
-                    "value": datetime.now().strftime("%H:%M:%S"),
-                    "inline": True
-                },
-                
-                {
-                    "name": "📊 Métriques",
-                    "value": metrics_text,
-                    "inline": False
-                },
-                {
-                    "name": "🔗 MLflow UI",
-                    "value": "[Accéder à l'interface](http://localhost:5000)",
-                    "inline": False
-                }
-            ],
-            "thumbnail": {
-                "url": "https://cdn-icons-png.flaticon.com/512/4712/4712139.png" # Icône de fusée/IA
-            },
-            "footer": {
-                "text": "Système de Monitoring MLOps - iTeam Univ"
-            },
-            "timestamp": datetime.utcnow().isoformat()
-        }]
-    }
-"""
     
 def notify_discord(message, run_id="N/A", metrics=None, level="success", task_name="Training"):
     """
