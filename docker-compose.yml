@@ -3,7 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:14
-    container_name: mlops_postgres
+    container_name: mlops_postgreslab
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
@@ -17,12 +17,12 @@ services:
 
   minio:
     image: minio/minio:latest
-    container_name: mlops_minio
+    container_name: mlops_miniolab
     environment:
       MINIO_ROOT_USER: root
       MINIO_ROOT_PASSWORD: root123456789
     ports:
-      - "9000:9000"
+      - "9010:9000"  # On change - "9000:9000"
       - "9001:9001"
     command: server /data --console-address ":9001"
     volumes:
@@ -34,7 +34,7 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile.mlflow
-    container_name: mlops_mlflow
+    container_name: mlops_mlflowlab
     ports:
       - "5000:5000"
     environment:
@@ -51,7 +51,7 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile.jupyter
-    container_name: mlops_jupyter
+    container_name: mlops_jupyterlab
     ports:
       - "8888:8888"
     environment:

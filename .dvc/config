@@ -1,0 +1,10 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = s3://mlflow/
+    endpointurl = http://127.0.0.1:9010
+    access_key_id = root
+    secret_access_key = root123456789
+    use_ssl = false
+    ssl_verify = false
+    region = us-east-1
