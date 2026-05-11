@@ -4,7 +4,7 @@
 
 > Architecture MLOps complète avec Docker, MLflow, MinIO, PostgreSQL, DVC et Discord Notifications  
 
-> \*\*Cours DevOps - MLOps • iTeam University • Mai 2026\*\*  
+> \*\* DevOps - MLOps • iTeam University • Mai 2026\*\*  
 
 > \*\*Auteur : Ing. LABIADH LINA\*\*
 
@@ -62,15 +62,15 @@ docker-compose up -d --build
 
 \### Accès aux interfaces
 
-| Service | URL | Credentials |
+| Service        | URL                   | Credentials              |
 
-|---------|-----|-------------|
+|----------------|-----------------------|--------------------------|
 
-| Jupyter Lab | http://localhost:8888 | token: `mlflow` |
+| Jupyter Lab    | http://localhost:8888 |      token: `mlflow`     |
 
-| MLflow UI | http://localhost:5000 | — |
+| MLflow UI      | http://localhost:5000 |            —             |
 
-| MinIO Console | http://localhost:9001 | `root` / `root123456789` |
+| MinIO Console  | http://localhost:9001 | `root` / `root123456789` |
 
 
 
