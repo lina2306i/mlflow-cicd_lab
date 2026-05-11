@@ -9,9 +9,9 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("DiscordNotifier")
 
 # Il est préférable d'utiliser une variable d'environnement pour la sécurité
-WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL", "https://discord.com/api/webhooks/1502639151034404999/wP9lUn1qgL7QCVeaLp-2OwgNYjc8oXddz7Z2b5z2IQaaOhZGm-zKPbN2qhhHGvuV74LG")
+#WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL", "https://discord.com/api/webhooks/1502639151034404999/wP9lUn1qgL7QCVeaLp-2OwgNYjc8oXddz7Z2b5z2IQaaOhZGm-zKPbN2qhhHGvuV74LG")
 
-#WEBHOOK_URL = "https://discord.com/api/webhooks/1502639151034404999/wP9lUn1qgL7QCVeaLp-2OwgNYjc8oXddz7Z2b5z2IQaaOhZGm-zKPbN2qhhHGvuV74LG"
+WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL", "https://discord.com/api/webhooks/1503504120072372436/tLMPJ6Erqsmz0Ok4awauPjcOKfP_eYMM9vsYcASIdZdPC_lgoggatfYZDYqVqe-UEG0n")
 
 #def notify_discord(message, level="info"):
 #def notify_discord(message, level="info", task_name="Training"):
