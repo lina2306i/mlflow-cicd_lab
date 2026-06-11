@@ -331,6 +331,39 @@ notify_discord(
 
 ---
 
+![Capture d'écran du Dashboard](assets/dashboard_preview.png)
+
+
+---
+## 📈 Évolution du projet (Stargazers over time)
+
+Si vous aimez ce projet, n'hésitez pas à laisser une 🌟 ! L'évolution des étoiles montre l'intérêt de la communauté pour ce pipeline MLOps :
+
+[![Stargazers over time](https://starchart.cc/lina2306i/mlflow-cicd_lab.svg?variant=adaptive)](https://starchart.cc/lina2306i/mlflow-cicd_lab)
+
+---
+
+---
+
+## Licence
+
+MIT License — voir [LICENSE](LICENSE)
+
+
+---
+
+## 👩‍💻 Auteur
+
+**Lina Labiadh** — *Ingénieure Data & AI*
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profil-0077b5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/linalabiadh/)
+[![Email](https://img.shields.io/badge/Email-Contact-d14836?style=for-the-badge&logo=gmail&logoColor=white)](https://mail.google.com/mail/?view=cm&fs=1&to=lina.hkl2306@gmail.com)
+
+*📧 Si le bouton email ne s'ouvre pas, vous pouvez me contacter directement à : **lina.hkl2306@gmail.com***
+
+
+---
+
 <div align="center">
 
 **Stack Technologique**
@@ -339,6 +372,6 @@ notify_discord(
 
 ---
 
-*Système de Monitoring MLOps — iTeam University • 2026*
+*Système de Monitoring MLOps — Lina Labiadh • 2026*
 
 </div>
