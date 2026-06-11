@@ -12,7 +12,7 @@
 
 > **Architecture MLOps complète** — de l'expérimentation jusqu'au versioning des données et à la notification temps réel.
 
-**Cours DevOps - MLOps • iTeam University • Mai 2026**
+**Projet  DevOps - MLOps • iTeam University • avril 2026**
 **Auteur : Ing. LABIADH LINA**
 
 </div>
